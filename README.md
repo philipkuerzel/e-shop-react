@@ -1,4 +1,4 @@
-# Hi, we are Farhad, Jannik, Philipp & Andre! 👋
+# Hi, we are Farhad, Jannik, Philip & Andre! 👋
 
 
 ## 🚀 About us
