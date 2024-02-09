@@ -1,0 +1,8 @@
+/* .homeBtn {
+    width: 200px;
+} */
+
+.tabBar {
+    display: flex;
+    gap: 20px;
+}
