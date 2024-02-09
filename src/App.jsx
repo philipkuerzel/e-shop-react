@@ -13,10 +13,9 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={<Splashscreen />} />
-      <Route path='/onboarding' element={<Onboarding />} />
-    <Route path="/home" element={<Home />} />
-    <Route path="/shop" element={<Shop />} />
+    <Route path='/' element={<Splashscreen />} />
+    <Route path='/onboarding' element={<Onboarding />} />
+    <Route path="/home" element={<Shop />} />
     <Route path="/products" element={<Products />} />
     <Route path="/product/:id" element={<Product />} /> 
     <Route path="/category/:category" element={<Category />} />
