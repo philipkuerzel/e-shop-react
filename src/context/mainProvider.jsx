@@ -33,6 +33,7 @@ const MainProvider = ({children}) => {
     }   , [])
         
   return (
+    <>
     <mainContext.Provider value={{ products, categories, setProducts, search, setSearch }}>
         {children}
     </mainContext.Provider>
