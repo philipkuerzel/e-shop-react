@@ -7,6 +7,7 @@ import Splashscreen from './components/Splashscreen'
 import Onboarding from './components/Onboarding'
 import Category from './assets/pages/category/Category'
 import './App.css'
+import Search from './assets/pages/search/Search'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <Route path="/products" element={<Products />} />
     <Route path="/product/:id" element={<Product />} /> 
     <Route path="/category/:category" element={<Category />} />
+    <Route path="/search/:searchTerm" element={<Search />} />
     </Routes>      
     </>
   )
