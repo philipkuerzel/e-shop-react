@@ -23,6 +23,7 @@ const Shop = () => {
     <>
     <div id="shop" className="shop">
       <SearchFunction />
+      <Link to="/filter">filter</Link>
       <div id="categories">
         <ul className='categories-header'>
           {categories.map((category, index) => {

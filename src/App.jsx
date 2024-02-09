@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from './assets/pages/home/Home'
 import Products from './assets/pages/products/Products'
 import Product from './assets/pages/product/product'
 import Shop from './assets/pages/shop/Shop'
@@ -8,6 +7,8 @@ import Onboarding from './components/Onboarding'
 import Category from './assets/pages/category/Category'
 import './App.css'
 import Search from './assets/pages/search/Search'
+import Filter from './assets/pages/filter/Filter'
+import FilterResults from './assets/pages/filterResults/FilterResults'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
     <Route path="/product/:id" element={<Product />} /> 
     <Route path="/category/:category" element={<Category />} />
     <Route path="/search/:searchTerm" element={<Search />} />
+    <Route path="/filter" element={<Filter/>}/>
+    <Route path='/filterResults' element={<FilterResults/>}/>
     </Routes>      
     </>
   )
