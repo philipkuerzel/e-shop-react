@@ -14,7 +14,7 @@ const Splashscreen = () => {
 
     return ( 
         <>
-        <img src="..\public\img\SplashScreen.jpg" alt="" />
+        <img className="splash" src="..\public\img\SplashScreen.jpg" alt="" />
         </>
      );
 }
