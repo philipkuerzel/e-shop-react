@@ -6,6 +6,7 @@ export const mainContext = createContext();
 
 const MainProvider = ({children}) => {
     const [products, setProducts] = useState([])
+    const [search, setSearch] = useState("")
     const [categories, setCategories] = useState([])
 
     // Fetch products from dummyjson.com and save the array of products in products state
@@ -32,8 +33,7 @@ const MainProvider = ({children}) => {
     }   , [])
         
   return (
-    <>
-    <mainContext.Provider value={{ products, categories, setProducts }}>
+    <mainContext.Provider value={{ products, categories, setProducts, search, setSearch }}>
         {children}
     </mainContext.Provider>
     </>
