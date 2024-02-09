@@ -1,17 +1,20 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Splashscreen = () => {
 
     const navigate = useNavigate()
 
-    setTimeout(() => {
+    useEffect (() => {
+      setTimeout(() => {
         navigate('/onboarding')
       }, "2000");
+    }, [])
 
 
     return ( 
         <>
-        <img src="..\public\img\SplashScreen.jpg" alt="" />
+        <img className="splash" src="..\public\img\SplashScreen.jpg" alt="" />
         </>
      );
 }
