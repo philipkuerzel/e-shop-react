@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import './shop.css'
 import { Link } from 'react-router-dom'
 import { mainContext } from '../../../context/mainProvider'
+import SearchFunction from '../../../components/searchFunction/SearchFunction'
+import TabBar from '../../../components/tabBar/TabBar'
 
 const Shop = () => {
   const { products, categories } = useContext(mainContext)
@@ -20,6 +22,7 @@ const Shop = () => {
   return (
     <>
     <div id="shop" className="shop">
+      <SearchFunction />
       <div id="categories">
         <ul className='categories-header'>
           {categories.map((category, index) => {
@@ -47,6 +50,7 @@ const Shop = () => {
         })
         }
         </div>
+      <TabBar />
       </div>
     </>
   )
