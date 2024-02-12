@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider';
 import "./filter.css"
 import { Link } from 'react-router-dom';
@@ -6,18 +6,36 @@ import { Link } from 'react-router-dom';
 const FilterFunction = () => {
 
 
-    const {categories, products, filter, setFilter} = useContext(mainContext)
+    const {categories, products, setFilter} = useContext(mainContext)
     const [priceRange, setPriceRange] = useState()
     const [brand, setBrand] = useState()
     const [category, setCategory] = useState()
-    
+    const [brands, setBrands] = useState([])
+    const [sortedCategories, setSortedCategories] = useState([])
+
+    useEffect(() => {
+        const sortBrands = [...products].sort((a, b) => {
+          return a.brand.localeCompare(b.brand)
+        })
+        setBrands(sortBrands)
+        console.log(sortBrands);
+      }, [products])
+
+      useEffect(() => {
+        const sortCategories = [...categories].sort((a, b) => {
+          return a.localeCompare(b)
+        })
+        setSortedCategories(sortCategories)
+        console.log(sortCategories);
+      }, [products, categories])
+
 console.log(category, brand, priceRange);
     return (
         <>
             <section className='grid'>
                 <h2>Categories</h2>
                 <div>
-                    {categories.map((category, index) => {
+                    {sortedCategories.map((category, index) => {
                         return (
                             <h3 className='active' key={index} onClick={()=> setCategory(category)}>{category}</h3>
                         )
@@ -33,7 +51,7 @@ console.log(category, brand, priceRange);
                     <h2>Brands</h2>
                 <div>
                 {
-                    [...new Set(products.map(product => product.brand))].slice(0, 14).map((brand, index) => {
+                    [...new Set(brands.map(product => product.brand))].map((brand, index) => {
                     return (
                         <h3 className='active' key={index} onClick={() => setBrand(brand)}>{brand}</h3>
                         )
