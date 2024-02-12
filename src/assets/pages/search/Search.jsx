@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider'
 import { Link, useParams } from 'react-router-dom'
+import SortByFunction from '../../../components/sortByFunction/SortByFunction'
 
 const Search = () => {
     const { products } = useContext(mainContext)
     const [filtered, setFiltered] = useState([])
     const searchObj = useParams()
     const searchTerm = searchObj.searchTerm
-
-    const [filter, setFilter] = useState({})
 
 
     useEffect (() => {
@@ -22,6 +21,7 @@ const Search = () => {
   return (
     <>
     <h1>Search results</h1>
+    <SortByFunction />
     <div id="product-grid" className='product-grid'>
         {filtered.map((product) => {
             return (

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider';
 import { Link, useParams } from 'react-router-dom';
 import './category.css'
+import SortByFunction from '../../../components/sortByFunction/SortByFunction';
 
 const Category = () => {
     
@@ -25,6 +26,7 @@ const Category = () => {
 
   return (
     <>
+    <SortByFunction/>
         <h1>{category}</h1>
         <div id="product-grid" className='product-grid'>
         {filtered.map((product) => {
