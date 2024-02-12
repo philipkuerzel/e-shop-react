@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Products from './assets/pages/products/Products'
-import Product from './assets/pages/product/product'
+import Product from './assets/pages/product/Product'
 import Shop from './assets/pages/shop/Shop'
 import Splashscreen from './components/Splashscreen'
 import Onboarding from './components/Onboarding'
