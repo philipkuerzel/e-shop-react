@@ -35,6 +35,7 @@ console.log(category, brand, priceRange);
             <section className='grid'>
                 <h2>Categories</h2>
                 <select onChange={(e) => (setCategory(e.target.value))}>
+                    <option value="-">Kategorie wählen</option>
                     {sortedCategories.map((category, index) => {
                         return (
                             <option className='active' key={index} value={(category)}>{category}</option>
@@ -43,6 +44,7 @@ console.log(category, brand, priceRange);
                 </select> 
                     <h2>Prices</h2>
                     <select onChange={(e) => setPriceRange(e.target.value.split(',').map(Number))}>
+                    <option value="-">Preisspanne wählen</option>
                     <option value="0,20">0-20 €</option>
                     <option value="20,50">20-50 €</option>
                     <option value="50, 100">50-100 €</option>
@@ -50,6 +52,7 @@ console.log(category, brand, priceRange);
                 </select>   
                     <h2>Brands</h2>
                 <select onChange={(e) => (setBrand(e.target.value))}>
+                <option value="-">Marke wählen</option>
                 {
                     [...new Set(brands.map(product => product.brand))].map((brand, index) => {
                     return (
