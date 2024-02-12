@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import './splashAni.css'
 
 const Splashscreen = () => {
 
@@ -14,7 +15,7 @@ const Splashscreen = () => {
 
     return ( 
         <>
-        <img className="splash" src="..\public\img\SplashScreen.jpg" alt="" />
+        <img className="splash" src="../src/assets/img/SplashScreen.jpg" alt="" />
         </>
      );
 }

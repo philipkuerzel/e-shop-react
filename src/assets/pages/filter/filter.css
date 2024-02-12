@@ -3,9 +3,3 @@
     flex-direction: column;
     margin-left: 5vw;
 }
-
-div {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
