@@ -34,31 +34,31 @@ console.log(category, brand, priceRange);
         <>
             <section className='grid'>
                 <h2>Categories</h2>
-                <div>
+                <select onChange={(e) => (setCategory(e.target.value))}>
                     {sortedCategories.map((category, index) => {
                         return (
-                            <h3 className='active' key={index} onClick={()=> setCategory(category)}>{category}</h3>
+                            <option className='active' key={index} value={(category)}>{category}</option>
                         )
                     })}
-                </div> 
+                </select> 
                     <h2>Prices</h2>
-                <div>
-                    <h3 onClick={()=> setPriceRange([0,20])}>0-20 €</h3>
-                    <h3 onClick={()=> setPriceRange([20,50])}>20-50 €</h3>
-                    <h3 onClick={()=> setPriceRange([50,100])}>50-100 €</h3>
-                    <h3 onClick={()=> setPriceRange([101,Infinity])}>über 100 €</h3>
-                </div>   
+                    <select onChange={(e) => setPriceRange(e.target.value.split(',').map(Number))}>
+                    <option value="0,20">0-20 €</option>
+                    <option value="20,50">20-50 €</option>
+                    <option value="50, 100">50-100 €</option>
+                    <option value="101, Infinity">Über 100€</option>
+                </select>   
                     <h2>Brands</h2>
-                <div>
+                <select onChange={(e) => (setBrand(e.target.value))}>
                 {
                     [...new Set(brands.map(product => product.brand))].map((brand, index) => {
                     return (
-                        <h3 className='active' key={index} onClick={() => setBrand(brand)}>{brand}</h3>
+                        <option className='active' key={index} value={(brand)}>{brand}</option>
                         )
                     })
                 }
                     
-                </div>
+                </select>
                 <Link to="/filterResults">
                     <button onClick={()=> setFilter({
                     category: category,
