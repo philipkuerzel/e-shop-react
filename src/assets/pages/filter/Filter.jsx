@@ -7,11 +7,10 @@ const FilterFunction = () => {
 
 
     const {categories, products, filter, setFilter} = useContext(mainContext)
-    const [priceRange, setPriceRange] = useState([])
+    const [priceRange, setPriceRange] = useState()
     const [brand, setBrand] = useState()
     const [category, setCategory] = useState()
     
-console.log(filter);
 console.log(category, brand, priceRange);
     return (
         <>
