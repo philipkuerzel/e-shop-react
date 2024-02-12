@@ -23,7 +23,7 @@ const FilterResults = () => {
     }, [filter])
     
     console.log(filtered);
-
+  
   return (
     <>
     <div>FilterResults</div>

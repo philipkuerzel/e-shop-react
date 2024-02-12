@@ -22,30 +22,33 @@ const Shop = () => {
   return (
     <>
     <div id="shop" className="shop">
-      <SearchFunction />
-      <Link to="/filter">filter</Link>
+    <h2>Find your favourite Products</h2>
+      <div className='flex'>
+        <SearchFunction />
+        <Link to="/filter"><button className='filterBtn'><img src="../src/assets/img/filterIcon.png" alt="" /></button></Link>
+      </div>
       <div id="categories">
         <ul className='categories-header'>
           {categories.map((category, index) => {
             return (
               <li key={index}>
-                <Link to={`/category/${category}`}>{category}</Link>
+                <Link className='catIcon' to={`/category/${category}`}><img src={`../src/assets/img/category/${category}.png`} alt="" /><p>{category}</p></Link>
               </li>
             )
           })}
         </ul>
       </div>
-      <div id="bs-header"><h2>Popular</h2><Link to="/category/all">View all</Link></div>
+      <div id="bs-header"><h3>Popular</h3><Link to="/category/all"><p>View all</p></Link></div>
         <div id="popular" className="popular">
           {popular.map((product) => {
             return (
               <div id="product" key={product.id}>
                 <img src={product.images[0]} width="200" alt={product.name} className='product-image'/>
-                <p>{product.rating}⭐</p>
-                <h3>{product.title}</h3>
-                <p>{product.price}€</p>
+                <p className='rating'>{product.rating}⭐</p>
+                <h4>{product.title}</h4>
+                <p className='price'>{product.price} €</p>
                 
-                <Link to={`/product/${product.id}`}>View</Link>
+                <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
               </div>
           )
         })
