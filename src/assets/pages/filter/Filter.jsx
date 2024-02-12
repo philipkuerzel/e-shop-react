@@ -7,14 +7,10 @@ const FilterFunction = () => {
 
 
     const {categories, products, filter, setFilter} = useContext(mainContext)
-    const [priceRange, setPriceRange] = useState()
+    const [priceRange, setPriceRange] = useState([])
     const [brand, setBrand] = useState()
     const [category, setCategory] = useState()
     
-    // useEffect(() => {
-    //     const getProductByCat = products.filter((product) => {
-        
-    // } , [])
 console.log(filter);
 console.log(category, brand, priceRange);
     return (
@@ -30,10 +26,10 @@ console.log(category, brand, priceRange);
                 </div> 
                     <h2>Prices</h2>
                 <div>
-                    <h3 onClick={()=> setPriceRange(20)}>0-20 €</h3>
-                    <h3>20-50 €</h3>
-                    <h3>50-100 €</h3>
-                    <h3>über 100 €</h3>
+                    <h3 onClick={()=> setPriceRange([0,20])}>0-20 €</h3>
+                    <h3 onClick={()=> setPriceRange([20,50])}>20-50 €</h3>
+                    <h3 onClick={()=> setPriceRange([50,100])}>50-100 €</h3>
+                    <h3 onClick={()=> setPriceRange([101,Infinity])}>über 100 €</h3>
                 </div>   
                     <h2>Brands</h2>
                 <div>
@@ -44,7 +40,6 @@ console.log(category, brand, priceRange);
                         )
                     })
                 }
-    
                     
                 </div>
                 <Link to="/filterResults">
@@ -53,7 +48,6 @@ console.log(category, brand, priceRange);
                     brand: brand,
                     priceRange: priceRange
                 })}>Apply</button></Link>
-
             </section>
         </>
     )
