@@ -1,6 +1,6 @@
 :root {
   --color1: #364FD4;
-  --color2: #F0F3F8;
+  --color2: #e3ecfc;
 }
 
 * {
@@ -12,6 +12,12 @@
 
 #root {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
 }
 
 .onboarding {
@@ -57,6 +63,7 @@ button {
 
 html {
   max-width: 430px;
+  background-color: #F5F5F5;
 }
 
 .product-image{
@@ -66,4 +73,49 @@ html {
 .splash {
   height: 100vh;
   width: 100%;
+}
+
+form {
+  width: 100%;
+}
+
+input[type=text]{
+  width: 95%;
+  height: 3.5rem;
+  border: none;
+  padding: 1.2rem .8em;
+  border-radius: 1em;
+  background: url('./assets/img/Search.png') no-repeat scroll 1.2rem;
+  background-color: var(--color2);
+  padding-left: 3rem;
+
+}
+
+input[type=text]::placeholder{
+  color: lightgrey;
+}
+
+.flex {
+  display: flex;
+  margin: 1em;
+}
+
+.filterBtn {
+  padding: 1.2rem;
+  height: 3.5rem;
+}
+
+.catIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10px;
+  img {
+    height: 4rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
 }
