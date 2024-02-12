@@ -30,7 +30,7 @@ const Category = () => {
         {filtered.map((product) => {
             return (
                 <div id="product" key={product.id}>
-                <img src={`https://www.google.com/${product.images[0]}`} width="200" alt={product.name} className='product-image'/>
+                <img src={`${product.images[0]}`} width="200" alt={product.name} className='product-image'/>
                 <p>{product.rating}⭐</p>
                 <h3>{product.title}</h3>
                 <p>{product.price}€</p>
