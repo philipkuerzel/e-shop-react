@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider';
 import { Link, useParams } from 'react-router-dom';
 import './category.css'
+import SortByFunction from '../../../components/sortByFunction/SortByFunction';
 
 const Category = () => {
     
@@ -25,12 +26,13 @@ const Category = () => {
 
   return (
     <>
+    <SortByFunction/>
         <h1>{category}</h1>
         <div id="product-grid" className='product-grid'>
         {filtered.map((product) => {
             return (
                 <div id="product" key={product.id}>
-                <img src={product.images[0]} width="200" alt={product.name} className='product-image'/>
+                <img src={`${product.images[0]}`} width="200" alt={product.name} className='product-image'/>
                 <p>{product.rating}⭐</p>
                 <h3>{product.title}</h3>
                 <p>{product.price}€</p>
