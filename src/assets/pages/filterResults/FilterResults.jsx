@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider'
 import { Link } from 'react-router-dom'
+import '../shop/shop.css'
+import SearchFunction from '../../../components/searchFunction/SearchFunction'
+import SortByFunction from '../../../components/sortByFunction/SortByFunction'
 
 const FilterResults = () => {
 
@@ -25,16 +28,21 @@ const FilterResults = () => {
   
   return (
     <>
-    <div>FilterResults</div>
-    <div id="product-grid" className='product-grid'>
+    <div className='flex'>
+        <SearchFunction />
+        <Link to="/filter"><button className='filterBtn'><img src="../src/assets/img/filterIcon.png" alt="" /></button></Link>
+    </div>
+    <SortByFunction />
+    <div id="product-grid" className='popular'>
         {filtered.map((product) => {
             return (
                 <div id="product" key={product.id}>
                 <img src={product.images[0]} width="200" alt={product.name} className='product-image'/>
-                <p>{product.rating}⭐</p>
-                <h3>{product.title}</h3>
-                <p>{product.price}€</p>
-                <Link to={`/product/${product.id}`}>View</Link>
+                <p className='rating'>{product.rating}⭐</p>
+                <h4>{product.title}</h4>
+                <p className='price'>{product.price} €</p>
+                
+                <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
                 </div>
             )
         })}

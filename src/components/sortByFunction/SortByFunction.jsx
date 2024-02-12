@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
+import './sortByFunction.css'
 
 const SortByFunction = () => {
     const {products, setProducts} = useContext(mainContext)
@@ -23,7 +24,8 @@ const SortByFunction = () => {
   return (
 
     <>
-    <div>
+    <div className='sort'>
+      <label htmlFor="select">Sort by: </label>
       <select onChange={(e) => setSortBy(e.target.value)}>
         <option value="A-Z">A-Z</option>
         <option value="Z-A">Z-A</option>
