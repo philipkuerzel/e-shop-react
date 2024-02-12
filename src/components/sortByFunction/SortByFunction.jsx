@@ -4,7 +4,6 @@ import { mainContext } from '../../context/mainProvider'
 const SortByFunction = () => {
     const {products, setProducts} = useContext(mainContext)
     const [sortBy, setSortBy] = useState('A-Z');
-    const arrayCopy = [...products]
   
     useEffect(() => {
       const sortProducts = () => {
