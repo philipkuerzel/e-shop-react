@@ -9,10 +9,7 @@ const Search = () => {
     const searchTerm = searchObj.searchTerm
 
     const [filter, setFilter] = useState({})
-    setFilter({searchTerm: '1'})
-    console.log(filter);
-    setFilter({searchTerm: '2'})
-    console.log(filter);
+
 
     useEffect (() => {
         const filterProducts = products.filter((product) => {
