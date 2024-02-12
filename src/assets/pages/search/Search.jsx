@@ -8,6 +8,12 @@ const Search = () => {
     const searchObj = useParams()
     const searchTerm = searchObj.searchTerm
 
+    const [filter, setFilter] = useState({})
+    setFilter({searchTerm: '1'})
+    console.log(filter);
+    setFilter({searchTerm: '2'})
+    console.log(filter);
+
     useEffect (() => {
         const filterProducts = products.filter((product) => {
             return ['title', 'brand', 'description', 'category'].some(attribute => product[attribute].toLowerCase().includes(searchTerm));
