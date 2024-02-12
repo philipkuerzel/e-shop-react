@@ -16,18 +16,9 @@ const FilterResults = () => {
             const brandMatch = filter.brand ? product.brand.includes(filter.brand) : true;
             const priceRangeMatch = filter.priceRange ? (product.price >= filter.priceRange[0] && product.price <= filter.priceRange[1]) : true;
 
-            console.log("categoryMatch:", categoryMatch);
-            console.log("brandMatch:", brandMatch);
-            console.log("priceRangeMatch:", priceRangeMatch);
-
             return categoryMatch && brandMatch && priceRangeMatch
-            
-            
-            
         })
-        
         setFiltered(getProducts)
-        
     }, [filter])
     
     console.log(filtered);

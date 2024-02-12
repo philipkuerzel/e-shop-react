@@ -11,7 +11,6 @@ const FilterFunction = () => {
     const [brand, setBrand] = useState()
     const [category, setCategory] = useState()
     
-console.log(filter);
 console.log(category, brand, priceRange);
     return (
         <>
