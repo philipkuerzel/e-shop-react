@@ -25,14 +25,14 @@ const Shop = () => {
     <h2>Find your favourite Products</h2>
       <div className='flex'>
         <SearchFunction />
-        <Link to="/filter"><button className='filterBtn'><img src="../src/assets/img/filterIcon.png" alt="" /></button></Link>
+        <Link to="/filter"><button className='filterBtn'><img src="./img/filterIcon.png" alt="" /></button></Link>
       </div>
       <div id="categories">
         <ul className='categories-header'>
           {categories.map((category, index) => {
             return (
               <li key={index}>
-                <Link className='catIcon' to={`/category/${category}`}><img src={`../src/assets/img/category/${category}.png`} alt="" /><p>{category}</p></Link>
+                <Link className='catIcon' to={`/category/${category}`}><img src={`./img/assets/img/category/${category}.png`} alt="" /><p>{category}</p></Link>
               </li>
             )
           })}
