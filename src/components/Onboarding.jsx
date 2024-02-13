@@ -5,7 +5,7 @@ const Onboarding = () => {
     return ( 
         <>
         <main className="onboarding">
-            <img src="../src/assets/img/onboarding.png" alt="" />
+            <img src="./img/onboarding.png" alt="" />
             <div>
                 <h2>Biggest Sell at Your Fingerprint</h2>
                 <p>Find your best products from popular shop without any delay</p>
