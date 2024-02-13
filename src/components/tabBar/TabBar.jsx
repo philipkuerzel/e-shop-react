@@ -23,7 +23,7 @@ const TabBar = () => {
     <div className='tabBar'>
       {modalVisible ? ( null ) : (
         <>
-        <button className='homeBtn'><Link to='/home'></Link>home</button>
+        <button className='homeBtn'><Link to='/home'></Link><img src="../" alt="" /></button>
         <button className='searchBtn' onClick={showModal}>search</button>
         </>
         )}

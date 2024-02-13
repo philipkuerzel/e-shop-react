@@ -1,0 +1,40 @@
+.detail {
+    margin: 1rem;
+    p {
+        color: grey;
+    }
+}
+
+.flex {
+    justify-content: space-between;
+}
+
+.centerProduct {
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-weight: bold;
+}
+
+.count {
+    background-color: grey;
+    padding: .3rem;
+}
+
+.price {
+    color: var(--color1);
+}
+
+.column {
+    flex-direction: column;
+}
+
+.height {
+    height: 1.85rem;
+    width: 1.85rem;
+    border-radius: .3rem;
+}
+
+.width {
+    width: 100%;
+}

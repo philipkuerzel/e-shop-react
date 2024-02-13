@@ -1,11 +1,24 @@
 import { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { mainContext } from '../../../context/mainProvider'
+import './product.css'
 
 const Product = () => {
     const { id } = useParams()
     const { products } = useContext(mainContext)
     const [product, setProduct] = useState()
+    const [count, setCount] = useState(1)
+
+    const navigate2 = useNavigate()
+
+    const plusEins = () => {
+        setCount(count + 1)
+    }
+    const minusEins = () => {
+        if (count > 1) {
+            setCount(count - 1)
+        }
+    }
 
     useEffect(() => {
         const filterProduct = products.filter((data) => {
@@ -17,23 +30,30 @@ const Product = () => {
 
     return (
         <>
-            <div>Produktdetails</div>
             {product ?
                 (
-                    <div>
+                    <div className='detail'>
+                        <button onClick={() => navigate2(-1)}>^^</button>
                         <h2>{product.title}</h2>
-                        <h2>{product.description}</h2>
-                        <h3>{product.price}</h3>
-                        <h4>{product.discountPercentage}</h4>
-                        <h5>{product.rating}</h5>
-                        <h5>{product.stock}</h5>
-                        <h5>{product.brand}</h5>
-                        <h5>{product.category}</h5>
-                        <h6>{product.thumbnail}</h6>
+                        <img src={product.thumbnail} alt="" />
+                        <section className='flex column width'>
+                            <div className='flex centerProduct'>
+                                <h3>{product.title}</h3>
+                                <div className='flex centerProduct'>
+                                    <button style={{backgroundColor: count === 1 ? 'lightgrey' : 'grey'}} className='count height' onClick={minusEins}>-</button>
+                                    <p>{count}</p>
+                                    <button className='count height' onClick={plusEins}>+</button>
+                                </div>
+                            </div>
+                            <h5>{product.rating} ⭐</h5>
+                            <h5>{product.stock} pieces in stock</h5>
+                            <h3 className='price'>{product.price} €</h3>
+                        </section>
+                        <p>{product.description}</p>
 
-                        {product.images && product.images.map((image, index) => (
+                        {/* {product.images && product.images.map((image, index) => (
                             <img key={index} src={image} alt={`Image ${index}`} />
-                        ))}
+                        ))} */}
                     </div>
                 )
                 :
