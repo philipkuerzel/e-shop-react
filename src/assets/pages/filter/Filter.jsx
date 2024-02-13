@@ -33,47 +33,43 @@ console.log(category, brand, priceRange);
     return (
         <>
             <section className='grid'>
-                <h2 className='center'>Filters</h2>
-                <div>
-                    <h3>Categories</h3>
-                    <select onChange={(e) => (setCategory(e.target.value))}>
-                        {sortedCategories.map((category, index) => {
-                            return (
-                                <option className='active' key={index} value={(category)}>{category}</option>
-                            )
-                        })}
-                    </select>
-                </div> 
-                    <div>
-                        <h3>Prices</h3>
-                        <select onChange={(e) => setPriceRange(e.target.value.split(',').map(Number))}>
-                        <option value="0,20">0-20 €</option>
-                        <option value="20,50">20-50 €</option>
-                        <option value="50, 100">50-100 €</option>
-                        <option value="101, Infinity">Über 100€</option>
-                    </select>
-                    </div>   
-                   <div>
-                        <h3>Brands</h3>
-                    <select onChange={(e) => (setBrand(e.target.value))}>
-                    {
-                        [...new Set(brands.map(product => product.brand))].map((brand, index) => {
+
+                <h2>Categories</h2>
+                <select onChange={(e) => (setCategory(e.target.value))}>
+                    <option value="-">Kategorie wählen</option>
+                    {sortedCategories.map((category, index) => {
                         return (
-                            <option className='active' key={index} value={(brand)}>{brand}</option>
-                            )
-                        })
-                    }
-                        
-                    </select>
-                   </div>
-                <div>
-                    <Link to="/filterResults">
-                        <button onClick={()=> setFilter({
-                        category: category,
-                        brand: brand,
-                        priceRange: priceRange
-                    })}>Apply</button></Link>
-                </div>
+                            <option className='active' key={index} value={(category)}>{category}</option>
+                        )
+                    })}
+                </select> 
+                    <h2>Prices</h2>
+                    <select onChange={(e) => setPriceRange(e.target.value.split(',').map(Number))}>
+                    <option value="-">Preisspanne wählen</option>
+                    <option value="0,20">0-20 €</option>
+                    <option value="20,50">20-50 €</option>
+                    <option value="50, 100">50-100 €</option>
+                    <option value="101, Infinity">Über 100€</option>
+                </select>   
+                    <h2>Brands</h2>
+                <select onChange={(e) => (setBrand(e.target.value))}>
+                <option value="-">Marke wählen</option>
+                {
+                    [...new Set(brands.map(product => product.brand))].map((brand, index) => {
+                    return (
+                        <option className='active' key={index} value={(brand)}>{brand}</option>
+                        )
+                    })
+                }
+                    
+                </select>
+                <Link to="/filterResults">
+                    <button onClick={()=> setFilter({
+                    category: category,
+                    brand: brand,
+                    priceRange: priceRange
+                })}>Apply</button></Link>
+                
             </section>
         </>
     )
