@@ -29,7 +29,7 @@ const Product = () => {
                         <h5>{product.stock}</h5>
                         <h5>{product.brand}</h5>
                         <h5>{product.category}</h5>
-                        <h5>{product.thumbnail}</h5>
+                        <h6>{product.thumbnail}</h6>
 
                         {product.images && product.images.map((image, index) => (
                             <img key={index} src={image} alt={`Image ${index}`} />
