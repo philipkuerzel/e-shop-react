@@ -33,6 +33,7 @@ console.log(category, brand, priceRange);
     return (
         <>
             <section className='grid'>
+
                 <h2>Categories</h2>
                 <select onChange={(e) => (setCategory(e.target.value))}>
                     <option value="-">Kategorie wählen</option>
@@ -68,6 +69,7 @@ console.log(category, brand, priceRange);
                     brand: brand,
                     priceRange: priceRange
                 })}>Apply</button></Link>
+                
             </section>
         </>
     )
