@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react';
 import "./tabBar.css"
+import { mainContext } from '../../context/mainProvider';
 
 const TabBar = () => {
-
+  const {setSearch, search} = useContext(mainContext)
   const [modalVisible, setModalVisible] = useState(false);
 
   const showModal = () => {
@@ -15,6 +16,7 @@ const TabBar = () => {
   };
 
   console.log(modalVisible);
+  const navigate = useNavigate()
 
   return (
     <>
@@ -27,7 +29,11 @@ const TabBar = () => {
         )}
             {modalVisible ? (
             <div id='searchModal' className='searchModal'>
-              <input type='text' placeholder='search...' />
+               <form onSubmit={(e) => {
+                e.preventDefault()
+                navigate(`/search/${search}`)}}>
+                <input type="text" placeholder="search..." onChange={(e) => {setSearch(e.target.value.toLowerCase())}}/>
+            </form>
               <button id='close' onClick={hideModal}>X</button>
             </div>
           ) : null}
