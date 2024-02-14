@@ -18,12 +18,7 @@ const TabBar = () => {
       lastScrollTop = st <= 0 ? 0 : st; 
     }
   }, []);
-
-  return (
-    <div className={`tabBar ${isVisible ? '' : 'hide'}`}>
-      <Link to='/home'><button className='noStyleBtn'><img src="/img/Home.png" alt="" /></button></Link>
-      <button className='noStyleBtn'><a href='/home/#searchField'><img src="/img/Search.png" alt="" /></a></button>
-    </div>
+  
   const {setSearch, search} = useContext(mainContext)
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -61,5 +56,4 @@ const TabBar = () => {
     </>
   )
 }
-
 export default TabBar;
