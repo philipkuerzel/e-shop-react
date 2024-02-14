@@ -8,8 +8,7 @@ import TabBar from '../../../components/tabBar/TabBar'
 
 const FilterResults = () => {
 
-    const {filter, products } = useContext(mainContext)
-    const [filtered, setFiltered] = useState([])
+    const {filter, products, filtered, setFiltered } = useContext(mainContext)
     console.log(filter.category);
     console.log(filter.priceRange);
     console.log(filter.brand);
@@ -19,7 +18,6 @@ const FilterResults = () => {
             const categoryMatch = filter.category ? product.category.includes(filter.category) : true;
             const brandMatch = filter.brand ? product.brand.includes(filter.brand) : true;
             const priceRangeMatch = filter.priceRange ? (product.price >= filter.priceRange[0] && product.price <= filter.priceRange[1]) : true;
-
             return categoryMatch && brandMatch && priceRangeMatch
         })
         setFiltered(getProducts)
@@ -42,7 +40,6 @@ const FilterResults = () => {
                 <p className='rating'>{product.rating}⭐</p>
                 <h4>{product.title}</h4>
                 <p className='price'>{product.price} €</p>
-                
                 <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
                 </div>
             )

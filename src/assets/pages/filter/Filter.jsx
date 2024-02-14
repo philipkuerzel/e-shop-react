@@ -57,7 +57,7 @@ console.log(category, brand, priceRange);
                         <option value="0,20">0-20 €</option>
                         <option value="20,50">20-50 €</option>
                         <option value="50, 100">50-100 €</option>
-                        <option value="101, Infinity">Über 100€</option>
+                        <option value="101, Infinity">above 100€</option>
                     </select>
                     </div>   
                    <div>
@@ -71,7 +71,7 @@ console.log(category, brand, priceRange);
                             )
                         })
                     }
-                        
+
                     </select>
                    </div>
                 <div>

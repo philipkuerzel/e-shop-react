@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import './sortByFunction.css'
 
 const SortByFunction = () => {
-    const {products, setProducts} = useContext(mainContext)
+    const {products, setProducts, filtered, setFiltered} = useContext(mainContext)
     const [sortBy, setSortBy] = useState('A-Z');
   
     useEffect(() => {
       const sortProducts = () => {
-        return [...products].sort((a, b) => 
+        return [...(filtered.length > 1 ? filtered : products)].sort((a, b) => 
           sortBy === 'A-Z' ? a.title.localeCompare(b.title) :
           sortBy === 'Z-A' ? b.title.localeCompare(a.title) :
           sortBy === 'Price descending' ? b.price - a.price :
@@ -17,7 +17,7 @@ const SortByFunction = () => {
           0
         );
       };
-      setProducts(sortProducts())
+      (filtered.length > 1 ? setFiltered : setProducts)(sortProducts());
     }, [sortBy]);
 
     console.log(sortBy);

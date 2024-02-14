@@ -25,7 +25,7 @@ const Shop = () => {
     <h2>Find your favourite Products</h2>
       <div className='flex'>
         <SearchFunction />
-        <Link to="/filter"><button className='filterBtn'><img src="/img/filterIcon.png" alt="" /></button></Link>
+        <Link to="/filter"><button className='filterBtn'><img src="./img/filterIcon.png" alt="" /></button></Link>
       </div>
       <div id="categories">
         <ul className='categories-header'>
