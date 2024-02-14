@@ -8,7 +8,7 @@ const SortByFunction = () => {
   
     useEffect(() => {
       const sortProducts = () => {
-        return [...(filtered ? filtered : products)].sort((a, b) => 
+        return [...(filtered.length > 1 ? filtered : products)].sort((a, b) => 
           sortBy === 'A-Z' ? a.title.localeCompare(b.title) :
           sortBy === 'Z-A' ? b.title.localeCompare(a.title) :
           sortBy === 'Price descending' ? b.price - a.price :
@@ -17,10 +17,7 @@ const SortByFunction = () => {
           0
         );
       };
-      console.log(sortProducts());
-      console.log(filtered);
-      (filtered ? console.log('filtered') : console.log('products'));
-      (filtered ? setFiltered : setProducts)(sortProducts());
+      (filtered.length > 1 ? setFiltered : setProducts)(sortProducts());
     }, [sortBy]);
 
     console.log(sortBy);
