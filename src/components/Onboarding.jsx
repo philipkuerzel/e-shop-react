@@ -6,14 +6,14 @@ const Onboarding = () => {
     return ( 
         <>
         <main className="onboarding">
-            <img src="/img/onboarding.png" alt="" />
+            <img className="imgFromTop" src="/img/onboarding.png" alt="" />
             <div>
-                <h2 className="slide-in-elliptic-bottom-fwd">Biggest Sell at Your Fingerprint</h2>
+                <h2 className="slide-in-elliptic-bottom-fwd">Biggest Trash at Your Fingerprint</h2>
                 <p className="slide-in-elliptic-bottom-bck">Find your best products from popular shop without any delay</p>
             </div>
             <Link className="bounce-in-bottom" to={'/home'}><button className="jello">Get Started</button></Link>
         </main>
-        <img className="splash" src="/img/SplashScreen.jpg" alt="" />
+        <div className="splash"><img className="splashImg" src="/img/schrott.png" alt="" /></div>
         </>
      );
 }

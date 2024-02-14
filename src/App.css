@@ -32,7 +32,9 @@ button {
   margin: 2em 0;
 }
 
-
+.pro {
+  color: white;
+}
 
 .onboarding div {
   max-width: 70%;
@@ -171,5 +173,23 @@ input[type=text]::placeholder{
 
   li a{
     color: white;
+  }
+}
+
+
+
+@keyframes splash {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+    background-color: transparent;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+    display: none;
+    background-color: transparent;
   }
 }
