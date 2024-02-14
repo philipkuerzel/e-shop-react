@@ -35,13 +35,15 @@ const FilterResults = () => {
     <div id="product-grid" className='popular'>
         {filtered.map((product) => {
             return (
-                <div id="product" key={product.id}>
-                <img src={product.images[0]} width="200" alt={product.name} className='product-image'/>
-                <p className='rating'>{product.rating}⭐</p>
-                <h4>{product.title}</h4>
-                <p className='price'>{product.price} €</p>
-                <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
-                </div>
+                <Link  className='pro' to={`/product/${product.id}`}>
+                    <div id="product" key={product.id}>
+                    <img src={product.images[0]} width="200" alt={product.name} className='product-image'/>
+                    <p className='rating'>{product.rating}⭐</p>
+                    <h4>{product.title}</h4>
+                    <p className='price'>{product.price} €</p>
+                    <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
+                    </div>
+                </Link>
             )
         })}
         </div>

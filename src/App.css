@@ -32,7 +32,9 @@ button {
   margin: 2em 0;
 }
 
-
+.pro {
+  color: white;
+}
 
 .onboarding div {
   max-width: 70%;
