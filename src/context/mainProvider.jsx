@@ -9,6 +9,7 @@ const MainProvider = ({children}) => {
     const [search, setSearch] = useState("")
     const [categories, setCategories] = useState([])
     const [filter, setFilter] = useState({})
+    const [filtered, setFiltered] = useState([])
 
     // Fetch products from dummyjson.com and save the array of products in products state
     useEffect(() => {
@@ -35,7 +36,7 @@ const MainProvider = ({children}) => {
         
   return (
     <>
-    <mainContext.Provider value={{ products, categories, setProducts, search, setSearch, filter, setFilter }}>
+    <mainContext.Provider value={{ products, categories, setProducts, search, setSearch, filter, setFilter, filtered, setFiltered }}>
         {children}
     </mainContext.Provider>
     </>
