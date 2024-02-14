@@ -71,7 +71,7 @@ console.log(category, brand, priceRange);
                             )
                         })
                     }
-                        
+
                     </select>
                    </div>
                 <div>
