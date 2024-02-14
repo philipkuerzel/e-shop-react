@@ -6,8 +6,7 @@ import TabBar from '../../../components/tabBar/TabBar'
 import '../shop/shop.css'
 
 const Search = () => {
-    const { products } = useContext(mainContext)
-    const [filtered, setFiltered] = useState([])
+    const { products, filtered, setFiltered } = useContext(mainContext)
     const searchObj = useParams()
     const searchTerm = searchObj.searchTerm
 
