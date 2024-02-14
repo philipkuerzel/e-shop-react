@@ -15,8 +15,8 @@ function App() {
   return (
     <>
     <Routes>
-    <Route path='/' element={<Splashscreen />} />
-    <Route path='/onboarding' element={<Onboarding />} />
+    <Route path='/splash' element={<Splashscreen />} />
+    <Route path='/' element={<Onboarding />} />
     <Route path="/home" element={<Shop />} />
     <Route path="/products" element={<Products />} />
     <Route path="/product/:id" element={<Product />} /> 

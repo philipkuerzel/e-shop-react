@@ -32,7 +32,7 @@ const Shop = () => {
           {categories.map((category, index) => {
             return (
               <li key={index}>
-                <Link className='catIcon' to={`/category/${category}`}><img src={`./img/category/${category}.png`} alt="" /><p>{category}</p></Link>
+                <Link className='catIcon' to={`/category/${category}`}><img src={`/img/category/${category}.png`} alt="" /><p>{category}</p></Link>
               </li>
             )
           })}

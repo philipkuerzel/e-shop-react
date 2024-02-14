@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import '../shop/shop.css'
 import SearchFunction from '../../../components/searchFunction/SearchFunction'
 import SortByFunction from '../../../components/sortByFunction/SortByFunction'
+import TabBar from '../../../components/tabBar/TabBar'
 
 const FilterResults = () => {
 
@@ -30,7 +31,7 @@ const FilterResults = () => {
     <>
     <div className='flex'>
         <SearchFunction />
-        <Link to="/filter"><button className='filterBtn'><img src="../src/assets/img/filterIcon.png" alt="" /></button></Link>
+        <Link to="/filter"><button className='filterBtn'><img src="/img/filterIcon.png" alt="" /></button></Link>
     </div>
     <SortByFunction />
     <div id="product-grid" className='popular'>
@@ -47,6 +48,7 @@ const FilterResults = () => {
             )
         })}
         </div>
+        <TabBar />
     </>
   )
 }

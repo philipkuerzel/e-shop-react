@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { mainContext } from '../../../context/mainProvider'
+import TabBar from '../../../components/tabBar/TabBar';
 import './product.css'
 
 const Product = () => {
@@ -33,23 +34,33 @@ const Product = () => {
             {product ?
                 (
                     <div className='detail'>
-                        <button onClick={() => navigate2(-1)}>^^</button>
-                        <h2>{product.title}</h2>
-                        <img src={product.thumbnail} alt="" />
-                        <section className='flex column width'>
-                            <div className='flex centerProduct'>
-                                <h3>{product.title}</h3>
-                                <div className='flex centerProduct'>
-                                    <button style={{backgroundColor: count === 1 ? 'lightgrey' : 'grey'}} className='count height' onClick={minusEins}>-</button>
-                                    <p>{count}</p>
-                                    <button className='count height' onClick={plusEins}>+</button>
+                        <div className='flex'>
+                            <button className='noStyleBtn' onClick={() => navigate2(-1)}><img className='backBtnImg' src='/img/back.png'/></button>
+                            <h2>{product.title}</h2>
+                        </div>
+                        <div className='imgAndText'>
+                            <img className='thumbnail' src={product.thumbnail} alt="" />
+                            <section className='flex column width'>
+                                <div className='flex spaceTitle'>
+                                    <h3 className='lowerTitle'>{product.title}</h3>
+                                    <div className='flex centerProduct'>
+                                        <button style={{backgroundColor: count === 1 ? 'lightgrey' : 'grey'}} className='count height' onClick={minusEins}>-</button>
+                                        <p>{count}</p>
+                                        <button className='count height' onClick={plusEins}>+</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <h5>{product.rating} ⭐</h5>
-                            <h5>{product.stock} pieces in stock</h5>
-                            <h3 className='price'>{product.price} €</h3>
+                                <h5 className='rat'>{product.rating} ⭐</h5>
+                                <div className='space'>
+                                    <h5 className='rat mg'>{product.stock} pieces in stock</h5>
+                                    <h3 className='priceDetails'>{product.price} €</h3>
+                                </div>
+                            </section>
+                        </div>
+                        <section className='descSection'>
+                            <h3 className='desc'>Description</h3>
+                            <p>{product.description}</p>
+                            <button className='addCart'>Add to Cart</button>
                         </section>
-                        <p>{product.description}</p>
 
                         {/* {product.images && product.images.map((image, index) => (
                             <img key={index} src={image} alt={`Image ${index}`} />
@@ -62,6 +73,7 @@ const Product = () => {
                         Laden...
                     </p>
                 )}
+                <TabBar />
         </>
     )
 }

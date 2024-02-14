@@ -1,12 +1,34 @@
 .detail {
     margin: 1rem;
+    margin-top: 2rem;
     p {
         color: grey;
+        text-align: justify;
+    }
+    .thumbnail {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        width: 100%;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
     }
 }
 
+
 .flex {
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        font-size: 1rem;
+        position: relative;
+        max-width: 90%;
+    }
+    .noStyleBtn {
+        position: absolute;
+        left: 1rem;
+    }
+    
 }
 
 .centerProduct {
@@ -14,6 +36,22 @@
     align-items: center;
     gap: .5rem;
     font-weight: bold;
+    p {
+        width: .7rem;
+        text-align: center;
+    }
+}
+
+.spaceTitle {
+    width: 90%;
+    justify-content: space-between;
+}
+
+.priceDetails {
+    color: var(--color1);
+    align-self: flex-end;
+    margin-right: 3rem;
+    font-size: 2rem;
 }
 
 .count {
@@ -21,8 +59,27 @@
     padding: .3rem;
 }
 
-.price {
-    color: var(--color1);
+.rat {
+    align-self: flex-start;
+    margin-left: 1rem;
+}
+
+.mg {
+    margin-top: 1rem;
+    color: rgba(128, 128, 128, 0.737);
+    font-weight: normal;
+}
+
+.lowerTitle {
+    font-size: 1.1rem;
+}
+
+.space {
+    display: flex;
+    width: 23rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .column {
@@ -37,4 +94,26 @@
 
 .width {
     width: 100%;
+}
+
+.imgAndText {
+    margin: 1rem;
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.descSection {
+    margin: 2rem;
+}
+
+.desc {
+    margin-bottom: 1rem;
+}
+
+.addCart {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding: .8rem;
 }

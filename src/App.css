@@ -32,6 +32,8 @@ button {
   margin: 2em 0;
 }
 
+
+
 .onboarding div {
   max-width: 70%;
   margin-bottom: 2.3em;
@@ -85,14 +87,15 @@ input[type=text]{
   border: none;
   padding: 1.2rem .8em;
   border-radius: 1em;
-  background: url('./assets/img/Search.png') no-repeat scroll 1.2rem;
+  background: url('/img/Search.png') no-repeat scroll 1.2rem;
   background-color: var(--color2);
   padding-left: 3rem;
+  outline: none;
 
 }
 
 input[type=text]::placeholder{
-  color: lightgrey;
+  color: grey;
 }
 
 .flex {
@@ -117,5 +120,56 @@ input[type=text]::placeholder{
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;
+  }
+}
+
+.noStyleBtn {
+  background-color: transparent;
+}
+
+.backBtnImg {
+  height: 1rem;
+
+}
+
+
+/* Darkmode Test */
+
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #242424;
+    color: white;
+  }
+
+  #product {
+    background-color: #1a1a1a;
+    img {
+      background-color: rgb(43, 43, 49);
+    }
+  }
+
+  .tabBar {
+    background-color: #242424;
+  }
+
+  .imgAndText {
+    background-color: #1a1a1a;
+  }
+
+  .backBtnImg {
+    filter: invert();
+  }
+
+  li a{
+    color: white;
   }
 }
