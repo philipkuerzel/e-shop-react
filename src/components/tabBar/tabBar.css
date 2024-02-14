@@ -5,6 +5,7 @@
 .tabBar {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     width: 100%;
@@ -17,4 +18,10 @@
     right: 0;
     padding: .5rem 0;
     box-shadow: 0 0 2px lightgrey;
+    transition: bottom 0.5s ease-in-out;
+    bottom: 0;
+}
+
+.tabBar.hide {
+    bottom: -100px; 
 }

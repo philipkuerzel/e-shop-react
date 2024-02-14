@@ -19,9 +19,6 @@
         border-radius: 5px;
         cursor: pointer;
         transition: all 0.3s ease;
-        &:hover{
-            background-color: #f4f4f4;
-        }
     }
     &::-webkit-scrollbar {
         display: none;
@@ -102,4 +99,20 @@
     position: absolute;
     right: 16px;
     bottom: 16px;
+}
+
+.flexSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        position: relative;
+        max-width: 90%;
+    }
+    .noStyleBtn {
+        position: absolute;
+        left: 1rem;
+        top: 2.4rem;
+    }
+    
 }

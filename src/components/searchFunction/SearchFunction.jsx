@@ -12,7 +12,7 @@ const SearchFunction = () => {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 navigate(`/search/${search}`)}}>
-                <input type="text" placeholder="search..." onChange={(e) => {setSearch(e.target.value.toLowerCase())}}/>
+                <input id='searchField' type="text" placeholder="search..." onChange={(e) => {setSearch(e.target.value.toLowerCase())}}/>
             </form>
            
         </>

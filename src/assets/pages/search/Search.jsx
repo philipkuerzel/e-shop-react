@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import SortByFunction from '../../../components/sortByFunction/SortByFunction'
 import TabBar from '../../../components/tabBar/TabBar'
 import '../shop/shop.css'
@@ -10,6 +10,8 @@ const Search = () => {
     const [filtered, setFiltered] = useState([])
     const searchObj = useParams()
     const searchTerm = searchObj.searchTerm
+
+    const navigate2 = useNavigate()
 
 
     useEffect (() => {
@@ -22,7 +24,10 @@ const Search = () => {
     console.log(filtered);
   return (
     <>
-    <h1 className='oneRem'>Search results</h1>
+    <div className='flexSearch'>
+      <button className='noStyleBtn' onClick={() => navigate2(-1)}><img className='backBtnImg' src='/img/back.png'/></button>
+      <h1 className='oneRem'>Search results</h1>
+    </div>
     <SortByFunction />
     <div id="product-grid" className='product-grid'>
         {filtered.map((product) => {
