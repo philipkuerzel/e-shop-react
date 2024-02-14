@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../../context/mainProvider';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './category.css'
 import SortByFunction from '../../../components/sortByFunction/SortByFunction';
 import '../shop/shop.css'
 import TabBar from '../../../components/tabBar/TabBar';
 
 const Category = () => {
+
+    const navigate2 = useNavigate()
     
     const { products } = useContext(mainContext)
     const [filtered, setFiltered] = useState([])
@@ -28,7 +30,10 @@ const Category = () => {
 
   return (
     <>
-        <h1 className='oneRem'>{category}</h1>
+        <div  className='oneRem'>
+            <button className='noStyleBtn' onClick={() => navigate2(-1)}><img className='backBtnImg' src='/img/back.png'/></button>
+            <h1>{category}</h1>
+        </div>
         <SortByFunction/>
         <div id="product-grid" className='product-grid'>
         {filtered.map((product) => {
@@ -40,11 +45,11 @@ const Category = () => {
                 <p className='price'>{product.price} €</p>
                 
                 <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
-                <TabBar />
               </div>
             )
         })}
         </div>
+        <TabBar />
     </>
   )
 }
