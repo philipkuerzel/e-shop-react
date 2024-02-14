@@ -38,11 +38,11 @@ const Search = () => {
                 <p className='price'>{product.price} €</p>
                 
                 <Link to={`/product/${product.id}`}><button className='round'>+</button></Link>
-                <TabBar />
               </div>
             )
-        })}
+          })}
         </div>
+          <TabBar />
     </>
   )
 }
