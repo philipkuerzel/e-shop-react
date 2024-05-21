@@ -9,7 +9,7 @@ On the road to be full stack developers...
 
 ## Demo
 
-https://github.com/abothke/e-shop-react
+[https://e-schrott.netlify.app/home]
 
 ## Authors
 - [@far1had](https://github.com/Far1had)
